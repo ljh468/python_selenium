@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from flask import Flask
+from flask import Flask, request
 
 import util.CmmUtil as cu
 import service.seleniumService as ta
@@ -14,7 +14,7 @@ def hello():
     return "<h1> 파이썬!! </h1>"
 
 
-@application.route('/crawlingAPI', methods=['POST','GET'])
+@application.route('/crawlingAPI', methods=['POST', 'GET'])
 def crawling():
     print("crawling start!!")
     # 입력받을 문장
@@ -27,7 +27,12 @@ def crawling():
     print("crawling end!!")
     return div
 
+@application.route('/facedetecting', methods=['POST', 'GET'])
+def facedeting():
+    print("face detecting start")
+    return "face complate"
 
 if __name__ == "__main__":
-    application.run(host="0.0.0.0", port=5000)
-    # application.run(host="127.0.0.1")
+    # application.run(host="0.0.0.0", port=5000)
+    application.run(host="127.0.0.1", port=5000)
+

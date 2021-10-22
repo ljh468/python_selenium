@@ -13,16 +13,15 @@ options.add_argument('--no-sandbox')
 
 def seleniumCrawling():
     # 크롬 Webdriver open
-    driver = webdriver.Chrome(chrome_options=options, executable_path="./chromedriver.exe")
+    # driver = webdriver.Chrome(chrome_options=options, executable_path="./chromedriver.exe")
+    driver = webdriver.Chrome("C:\python_selenium\chromedriver.exe")
     driver.implicitly_wait(3)
-    # driver = webdriver.Chrome("C:/Users/DATALAB_3/AppData/Local/Programs/Python/Python36/chromedriver.exe")
 
     siteList = [1, 19, 2, 23, 20]
     # siteList = [1,19]
     areaList = ["기획아이디어", "디자인", "광고/마케팅", "문학/시나리오", "IT/소프트웨어"]
     k = 0
     wList = []
-
 
     for i in siteList:
         rList = {}
